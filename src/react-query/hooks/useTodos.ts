@@ -17,6 +17,7 @@ const useTodos = () => {
   return useQuery<Todo[], Error>({
     queryKey: ["todos"], // id per la query, usato internamente per il caching
     queryFn: fetchTodos, // funzione usata per prendere i dati da backend, ritorna una Promise
+    staleTime: 10 * 1000, // 10s
   });
 };
 
