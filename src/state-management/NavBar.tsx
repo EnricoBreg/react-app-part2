@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import LoginStatus from "./auth/LoginStatus";
-import TasksContext from "./tasks/tasksContext";
 import useCounterStore from "./counter/Store";
+import TasksContext from "./tasks/tasksContext";
 
 const NavBar = () => {
-  // const { tasks, dispatch } = useContext(TasksContext);
-  const { counter } = useCounterStore();
+  const { tasks } = useContext(TasksContext);
+  const counter = useCounterStore((s) => s.counter);
+
+  console.log("Render Navbar");
 
   return (
     <nav className="navbar d-flex justify-content-between">

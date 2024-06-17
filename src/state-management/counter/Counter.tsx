@@ -1,8 +1,6 @@
 import useCounterStore from "./Store";
 
 const Counter = () => {
-  // const [value, setValue] = useState(0);
-  // const [value, dispatch] = useReducer(counterReducer, 0);
   const { counter, increment, reset } = useCounterStore();
 
   return (
